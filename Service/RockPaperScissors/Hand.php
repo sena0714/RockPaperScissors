@@ -3,5 +3,5 @@ interface Hand
 {
     public function getCode();
 
-    public function play(Hand $otherPlayerHand);
+    public function play(Hand $otherHand);
 }
