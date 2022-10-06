@@ -1,6 +1,6 @@
 <?php
-require_once('HandFactory.php');
-require_once('MatchResultStatus.php');
+require_once(__DIR__.'/../../Service/RockPaperScissors/HandFactory.php');
+require_once(__DIR__.'/../../Service/RockPaperScissors/MatchResultStatus.php');
 
 class MatchAction
 {

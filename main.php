@@ -1,5 +1,5 @@
 <?php
-require_once('Service/RockPaperScissors/MatchAction.php');
+require_once('UseCases/RockPaperScissors/MatchAction.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $matchAction = new MatchAction((int) $_POST['hand_code']);
