@@ -17,17 +17,22 @@ class MatchAction
 
         $otherHand = HandFactory::createRandom();
 
-        $matchResult = $hand->play($otherHand);
+        $matchResultStatus = $hand->play($otherHand);
 
-        if ($matchResult === MatchResultStatus::WIN) {
+        $this->showMatchResult($matchResultStatus);
+    }
+
+    private function showMatchResult(int $matchResultStatus)
+    {
+        if ($matchResultStatus === MatchResultStatus::WIN) {
             echo 'あなたの勝ち！';
         }
 
-        if ($matchResult === MatchResultStatus::LOSE) {
+        if ($matchResultStatus === MatchResultStatus::LOSE) {
             echo 'あなたの負け。。。';
         }
 
-        if ($matchResult === MatchResultStatus::DRAW) {
+        if ($matchResultStatus === MatchResultStatus::DRAW) {
             echo '引き分け';
         }
     }
