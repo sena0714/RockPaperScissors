@@ -1,6 +1,7 @@
 <?php
 require_once(__DIR__.'/../../Service/RockPaperScissors/HandFactory.php');
 require_once(__DIR__.'/../../Service/RockPaperScissors/MatchResultStatus.php');
+require_once(__DIR__.'/../../Service/RockPaperScissors/MatchResult.php');
 
 class MatchAction
 {
@@ -19,21 +20,16 @@ class MatchAction
 
         $matchResultStatus = $hand->play($otherHand);
 
-        $this->showMatchResult($matchResultStatus);
-    }
+        $matchResult = new MatchResult($hand, $otherHand, $matchResultStatus);
 
-    private function showMatchResult(int $matchResultStatus)
-    {
-        if ($matchResultStatus === MatchResultStatus::WIN) {
-            echo 'あなたの勝ち！';
-        }
+        $matchResult->showOutHand();
 
-        if ($matchResultStatus === MatchResultStatus::LOSE) {
-            echo 'あなたの負け。。。';
-        }
+        echo nl2br(PHP_EOL);
 
-        if ($matchResultStatus === MatchResultStatus::DRAW) {
-            echo '引き分け';
-        }
+        $matchResult->showOutOtherHand();
+
+        echo nl2br(PHP_EOL);
+
+        $matchResult->showMatchResult();
     }
 }

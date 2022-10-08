@@ -1,15 +1,19 @@
 <?php
 require_once('Hand.php');
 require_once('HandCodes.php');
+require_once('HandNames.php');
 require_once('MatchResultStatus.php');
 
 class Scissors implements Hand
 {
-    private $code = HandCodes::SCISSORS;
+    public function getName()
+    {
+        return HandNames::SCISSORS;
+    }
 
     public function getCode()
     {
-        return $this->code;
+        return HandCodes::SCISSORS;
     }
 
     public function play(Hand $otherHand)
