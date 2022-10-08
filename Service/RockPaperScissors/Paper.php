@@ -1,8 +1,8 @@
 <?php
 require_once('Hand.php');
-require_once('HandCodes.php');
-require_once('HandNames.php');
-require_once('MatchResultStatus.php');
+require_once('Constant/HandCodes.php');
+require_once('Constant/HandNames.php');
+require_once('Constant/MatchResultStatus.php');
 
 class Paper implements Hand
 {

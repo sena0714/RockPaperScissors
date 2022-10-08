@@ -1,5 +1,5 @@
 <?php
-require_once('HandCodes.php');
+require_once('Constant/HandCodes.php');
 require_once('Rock.php');
 require_once('Paper.php');
 require_once('Scissors.php');
